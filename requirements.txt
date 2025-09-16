@@ -1,0 +1,7 @@
+fastapi 
+psycopg2 
+sentence_transformers 
+dotenv
+asyncpg
+sqlalchemy
+pgvector
