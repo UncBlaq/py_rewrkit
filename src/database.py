@@ -24,7 +24,6 @@ if ENV == "production":
 else:
     connect_args = {"ssl": False}
 
-# engine = create_async_engine(DATABASE_URL, echo=False, connect_args={"ssl": ssl_context})
 
 engine = create_async_engine(
     DATABASE_URL,
@@ -32,8 +31,6 @@ engine = create_async_engine(
     connect_args=connect_args
 )
 
-
-# engine = create_async_engine(DATABASE_URL, echo=False,  connect_args={"ssl": ssl_context})
 
 SessionLocal = sessionmaker(
     bind=engine,
@@ -52,6 +49,5 @@ async def get_db():
         finally:
             await db.close()
 
-# Annotated to declare dependency for FastAPI routes
 db_dependency = Annotated[AsyncSession, Depends(get_db)]
 

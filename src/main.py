@@ -1,5 +1,5 @@
-from fastapi import FastAPI, Header, HTTPException, status
-from sentence_transformers import SentenceTransformer
+from fastapi import FastAPI
+from sentence-transformers import SentenceTransformer
 
 from fastapi.middleware.cors import CORSMiddleware
 from src.post.route import post_router
@@ -32,8 +32,10 @@ app.include_router(job_router)
 
 @app.on_event("startup")
 async def on_startup():
-    # Load the embedding model and store it in app.state
     app.state.embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
+
+
+          
 
 
 
