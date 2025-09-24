@@ -13,7 +13,9 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout repository
-            - uses: actions/checkout@v4
+              uses: actions/checkout@v4
+
+            - name: Echo checkout
               run: echo "Checked out repository"
               shell: bash
 
