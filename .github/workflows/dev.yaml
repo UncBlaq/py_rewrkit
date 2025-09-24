@@ -1,0 +1,20 @@
+name: Deploy Development Stage
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+    build-and-deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+              run echo "Checked out repository"
+              shell: bash
+
+
